@@ -10,7 +10,10 @@ app.server = http.createServer(app);
 
 // middleware
 
-// passeport config
+// parse application to json
+app.use(bodyParser.json({
+  limit: config.bodyLimit // pour sécuriser en surchargeant les champs
+}));
 
 // API routes v1
 
